@@ -16,7 +16,7 @@ const EditAuto = () => {
 
   const fetchData = () => {
     return axios
-      .get("http://localhost:8000/api/autos/" + params.id)
+      .get("https://app-auto-backend-production.up.railway.app/api/autos/" + params.id)
       .then((response) => setAuto(response.data.auto));
   };
 
@@ -39,7 +39,7 @@ const EditAuto = () => {
   const handleSubmit = (event, id) => {
     event.preventDefault();
     axios
-      .put("http://localhost:8000/api/autos/" + id, post)
+      .put("https://app-auto-backend-production.up.railway.app/api/autos/" + id, post)
       .then((response) => console.log(response))
       .catch((err) => console.log(err));
   };

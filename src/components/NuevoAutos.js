@@ -47,7 +47,7 @@ const NuevoAuto = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post("http://localhost:8000/api/autos", post)
+    axios.post("https://app-auto-backend-production.up.railway.app/api/autos", post)
       .then(response => console.log(response))
       .catch(err => console.log(err));
   }

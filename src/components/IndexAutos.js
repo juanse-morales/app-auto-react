@@ -7,7 +7,7 @@ const IndexAutos = () => {
   const [auto, setAuto] = useState([]);
 
   const fetchData = () => {
-    return axios.get("http://localhost:8000/api/autos")
+    return axios.get("https://app-auto-backend-production.up.railway.app/api/autos")
       .then((response) => setAuto(response.data));
   };
 
@@ -16,7 +16,7 @@ const IndexAutos = () => {
   }, []);
 
   const onDeleteAuto = (id, event) => {
-    axios.delete("http://localhost:8000/api/autos/"+id)
+    axios.delete("https://app-auto-backend-production.up.railway.app/api/autos/"+id)
       .then(res => {console.log(res); window.location.replace('');})
       .catch(err => console.log(err));
   };
