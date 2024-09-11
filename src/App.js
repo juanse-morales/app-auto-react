@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import IndexAutos from "./components/IndexAutos";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="d-flex flex-column h-100">
+      <main class="flex-shrink-0">
+        <div class="container">
+          <h3 class="my-3" id="titulo">
+            Autos
+          </h3>
+
+          <a href="nuevo.html" class="btn btn-success">
+            Agregar
+          </a>
+
+          <IndexAutos />
+        </div>
+      </main>
     </div>
   );
 }
