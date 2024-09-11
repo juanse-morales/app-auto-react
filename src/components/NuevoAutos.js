@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const NuevoAuto = () => {
   return (
     <div class="d-flex flex-column h-100">
@@ -56,9 +58,9 @@ const NuevoAuto = () => {
             </div>
 
             <div class="col-12">
-              <a href="index.html" class="btn btn-secondary">
+              <Link to="/" class="btn btn-secondary">
                 Regresar
-              </a>
+              </Link>
               <button type="submit" class="btn btn-primary">
                 Guardar
               </button>
