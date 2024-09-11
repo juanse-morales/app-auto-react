@@ -1,4 +1,5 @@
 import "./App.css";
+import Footer from "./components/footer";
 import IndexAutos from "./components/IndexAutos";
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
           <IndexAutos />
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 }
