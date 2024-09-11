@@ -14,6 +14,12 @@ const IndexAutos = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const onDeleteAuto = (id, event) => {
+    axios.delete("http://localhost:8000/api/autos/"+id)
+      .then(res => {console.log(res); window.location.replace('');})
+      .catch(err => console.log(err));
+  };
   
   return (
     <div>
@@ -56,9 +62,7 @@ const IndexAutos = () => {
               <button
                 type="button"
                 class="btn btn-danger btn-sm"
-                data-bs-toggle="modal"
-                data-bs-target="#eliminaModal"
-                data-bs-id="1"
+                onClick={(e) => onDeleteAuto(autoObj.id, e)}
               >
                 Eliminar
               </button>
