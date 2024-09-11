@@ -55,9 +55,9 @@ const IndexAutos = () => {
             <td> {autoObj.marca} </td>
             <td> {autoObj.pais} </td>
             <td>
-              <a href="edita.html" class="btn btn-warning btn-sm me-2">
+              <Link to={'/edit/'+autoObj.id} class="btn btn-warning btn-sm me-2">
                 Editar
-              </a>
+              </Link>
 
               <button
                 type="button"
