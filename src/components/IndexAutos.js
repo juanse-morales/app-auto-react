@@ -1,6 +1,20 @@
 import { Link } from "react-router-dom";
+import axios from 'axios';
+import { useState, useEffect } from "react";
 
 const IndexAutos = () => {
+  
+  const [auto, setAuto] = useState([]);
+
+  const fetchData = () => {
+    return axios.get("http://localhost:8000/api/autos")
+      .then((response) => setAuto(response.data));
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+  
   return (
     <div>
       <h3 class="my-3" id="titulo">
@@ -27,12 +41,13 @@ const IndexAutos = () => {
         </thead>
 
         <tbody>
+        {auto && auto.length > 0 && auto.map((autoObj, index) => (
           <tr>
-            <td>12345</td>
-            <td>JUAN PEREZ</td>
-            <td>0123456789</td>
-            <td>JUANPEREZ@DOMINIO.COM</td>
-            <td>RECURSOS HUMANOS</td>
+            <td> {autoObj.id} </td>
+            <td> {autoObj.name} </td>
+            <td> {autoObj.modelo} </td>
+            <td> {autoObj.marca} </td>
+            <td> {autoObj.pais} </td>
             <td>
               <a href="edita.html" class="btn btn-warning btn-sm me-2">
                 Editar
@@ -49,6 +64,9 @@ const IndexAutos = () => {
               </button>
             </td>
           </tr>
+          
+        ))}
+        
         </tbody>
       </table>
     </div>
